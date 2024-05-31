@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 import SettingForm from "@/modules/settings/SettingForm";

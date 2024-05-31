@@ -58,6 +58,13 @@ export const TIME_OPTIONS = {
   "19:00": "7:00 PM",
 };
 
+export const END_TIME_OPTIONS = {
+  "19:15": "7:15 PM",
+  "19:30": "7:30 PM",
+  "19:45": "7:45 PM",
+  "20:00": "8:00 PM",
+};
+
 export const DAY_PARSE = {
   monday: "mon",
   tuesday: "tue",

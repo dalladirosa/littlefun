@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { TIME_OPTIONS } from "@/modules/settings/constants";
+import { END_TIME_OPTIONS, TIME_OPTIONS } from "@/modules/settings/constants";
 import { DayParseKey } from "@/modules/settings/SettingForm";
 import { calculateEndTime } from "@/utils/calculateEndTime";
 
@@ -105,7 +105,7 @@ const AvailabilityDayTimeSlot = ({
 
   // Calculate the latest start time based on the duration
   const latestStartTime = calculateEndTime(
-    "19:00",
+    "20:00",
     "-" + generalSettings.duration,
   );
 
@@ -141,11 +141,13 @@ const AvailabilityDayTimeSlot = ({
           <SelectValue placeholder="Select" />
         </SelectTrigger>
         <SelectContent>
-          {Object.entries(TIME_OPTIONS).map(([value, label]) => (
-            <SelectItem key={value} value={value}>
-              {label}
-            </SelectItem>
-          ))}
+          {Object.entries({ ...TIME_OPTIONS, ...END_TIME_OPTIONS }).map(
+            ([value, label]) => (
+              <SelectItem key={value} value={value}>
+                {label}
+              </SelectItem>
+            ),
+          )}
         </SelectContent>
       </Select>
       <Button

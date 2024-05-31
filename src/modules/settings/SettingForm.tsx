@@ -11,18 +11,12 @@ export type DayParseKey = keyof typeof DAY_PARSE;
 
 const SettingForm = () => {
   const [generalSettings, setGeneralSettings] = useState(() => {
-    const savedSettings =
-      typeof window !== "undefined"
-        ? loadFromLocalStorage("generalSettings")
-        : false;
+    const savedSettings = loadFromLocalStorage("generalSettings");
     return savedSettings ? savedSettings : { duration: "", noBookings: "" };
   });
 
   const [availability, setAvailability] = useState(() => {
-    const savedAvailability =
-      typeof window !== "undefined"
-        ? loadFromLocalStorage("availability")
-        : false;
+    const savedAvailability = loadFromLocalStorage("availability");
     return savedAvailability
       ? savedAvailability
       : {

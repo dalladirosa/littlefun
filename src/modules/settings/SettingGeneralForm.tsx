@@ -43,9 +43,9 @@ const SettingGeneralForm = ({
           let newEndTime = calculateEndTime(timeSlot.start, newDuration);
 
           // If the new end time exceeds 19:00, subtract the duration from the end time to get the new start time
-          if (newEndTime > "19:00") {
-            timeSlot.start = calculateEndTime("19:00", "-" + newDuration);
-            newEndTime = "19:00";
+          if (newEndTime > "20:00") {
+            timeSlot.start = calculateEndTime("20:00", "-" + newDuration);
+            newEndTime = "20:00";
           }
 
           return {
